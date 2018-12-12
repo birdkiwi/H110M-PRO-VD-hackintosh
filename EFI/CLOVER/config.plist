@@ -500,29 +500,6 @@
 	</dict>
 	<key>KernelAndKextPatches</key>
 	<dict>
-		<key>KernelToPatch</key>
-		<array>
-			<dict>
-				<key>Comment</key>
-				<string>Disable panic kext logging on 10.13 debug kernel (credit Vandroiy)</string>
-				<key>MatchOS</key>
-				<string>10.13.x</string>
-				<key>Find</key>
-				<data>sABMi1Xw</data>
-				<key>Replace</key>
-				<data>SIPEQF3D</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Disable panic kext logging on 10.13 release kernel (credit Vandroiy)</string>
-				<key>MatchOS</key>
-				<string>10.13.x</string>
-				<key>Find</key>
-				<data>igKEwHRE</data>
-				<key>Replace</key>
-				<data>igKEwOtE</data>
-			</dict>
-		</array>
 		<key>#ATIConnectorsController</key>
 		<string>6000</string>
 		<key>#ATIConnectorsData</key>
@@ -641,15 +618,69 @@
 		<true/>
 		<key>KernelPm</key>
 		<true/>
+		<key>KernelToPatch</key>
+		<array>
+			<dict>
+				<key>Comment</key>
+				<string>Disable panic kext logging on 10.13 debug kernel (credit Vandroiy)</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				sABMi1Xw
+				</data>
+				<key>MatchOS</key>
+				<string>10.13.x</string>
+				<key>Replace</key>
+				<data>
+				SIPEQF3D
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Disable panic kext logging on 10.13 release kernel (credit Vandroiy)</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				igKEwHRE
+				</data>
+				<key>MatchOS</key>
+				<string>10.13.x</string>
+				<key>Replace</key>
+				<data>
+				igKEwOtE
+				</data>
+			</dict>
+		</array>
 		<key>KernelXCPM</key>
 		<false/>
+		<key>KextsToPatch</key>
+		<array>
+			<dict>
+				<key>Comment</key>
+				<string>webdriver.sh: Disable NVIDIA Required OS</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				TlZEQVJlcXVpcmVkT1MA
+				</data>
+				<key>Name</key>
+				<string>NVDAStartupWeb</string>
+				<key>Replace</key>
+				<data>
+				AAAAAAAAAAAAAAAAAAAA
+				</data>
+			</dict>
+		</array>
 	</dict>
 	<key>RtVariables</key>
 	<dict>
 		<key>BooterConfig</key>
 		<string>0x28</string>
 		<key>CsrActiveConfig</key>
-		<string>0x3E7</string>
+		<string>0x67</string>
 	</dict>
 	<key>SMBIOS</key>
 	<dict>
@@ -763,21 +794,21 @@
 		<key>#Version</key>
 		<string>1.0</string>
 		<key>BiosReleaseDate</key>
-		<string>08/08/2017</string>
+		<string>02/08/2018</string>
 		<key>BiosVendor</key>
 		<string>Apple Inc.</string>
 		<key>BiosVersion</key>
-		<string>IM171.88Z.0110.B00.1708080012</string>
+		<string>IM171.88Z.0151.B00.1802080854</string>
 		<key>Board-ID</key>
 		<string>Mac-B809C3757DA9BB8D</string>
 		<key>BoardManufacturer</key>
 		<string>Apple Inc.</string>
 		<key>BoardSerialNumber</key>
-		<string>C02552404GUDNJJA8</string>
+		<string>C026294034NF6521F</string>
 		<key>BoardType</key>
 		<integer>10</integer>
 		<key>BoardVersion</key>
-		<string>iMac17,1</string>
+		<string>1.0</string>
 		<key>ChassisAssetTag</key>
 		<string>iMac-Aluminum</string>
 		<key>ChassisManufacturer</key>
@@ -787,7 +818,7 @@
 		<key>Family</key>
 		<string>iMac17,1</string>
 		<key>FirmwareFeatures</key>
-		<string>0xFC0FE136</string>
+		<string>0xFC0FE137</string>
 		<key>FirmwareFeaturesMask</key>
 		<string>0xFF1FFF3F</string>
 		<key>LocationInChassis</key>
@@ -801,7 +832,7 @@
 		<key>ProductName</key>
 		<string>iMac17,1</string>
 		<key>SerialNumber</key>
-		<string>C02R1122GG7L</string>
+		<string>C02S3ZK1GG7L</string>
 		<key>Version</key>
 		<string>1.0</string>
 	</dict>
@@ -814,6 +845,8 @@
 		<key>InjectKexts</key>
 		<string>Yes</string>
 		<key>InjectSystemID</key>
+		<true/>
+		<key>NvidiaWeb</key>
 		<true/>
 	</dict>
 </dict>
