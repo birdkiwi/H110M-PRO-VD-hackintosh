@@ -1,6 +1,6 @@
 My Open Core config for MSI H110M-PRO-VD motherboard.
 
-For macOS Mojave 10.15.7
+For macOS Mojave 10.15.7 - Big Sur 11.0.1
 Open Core 0.6.3
 
 Original guide: https://dortania.github.io/OpenCore-Install-Guide/
